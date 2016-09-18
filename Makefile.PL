@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
@@ -18,6 +19,9 @@ WriteMakefile(
     PREREQ_PM => {
         'HTML::Strip'     => 0,
         'Class::Accessor' => 0,
+    },
+    TEST_REQUIRES => {
+        'Test::Class' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'HTML-SocialMedia-Hashtag-*' },

@@ -14,7 +14,7 @@ Get #hashtags and @usernames from html
 =head2 SYNOPSIS
 
     use HTML::SocialMedia::Hashtag;
-    my $object = HTML::SocialMedia::Hashtag -> new( text => 'text with #hashtag and @username' );
+    my $scanner = HTML::SocialMedia::Hashtag -> new( text => 'text with #hashtag and @username' );
     my @hashtags  = $object -> hashtags();
     my @usernames = $object -> usernames();
 
