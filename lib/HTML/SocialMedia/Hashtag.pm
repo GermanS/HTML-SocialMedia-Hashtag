@@ -20,7 +20,7 @@ Get #hashtags and @usernames from html
 
 =cut
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 use Encode qw(decode encode is_utf8);
 use HTML::Strip;
