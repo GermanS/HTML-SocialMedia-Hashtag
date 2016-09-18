@@ -1,4 +1,4 @@
-package Test::HTML::SocialMedia::Hashtag::SearchForHashtags;
+package HTML::SocialMedia::Hashtag::SearchForHashtags;
 
 use strict;
 use warnings;

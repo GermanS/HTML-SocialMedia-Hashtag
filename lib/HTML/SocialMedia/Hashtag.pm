@@ -24,10 +24,10 @@ our $VERSION = '0.1';
 
 use HTML::Strip;
 
-use Class::Accessor qw(antlers);
+use Moose;
+use namespace::autoclean;
 
-
-has 'text' => ( is => 'rw' );
+has 'text' => ( is => 'rw', isa => 'Str', required => 1 );
 
 =head2 METHODS
 

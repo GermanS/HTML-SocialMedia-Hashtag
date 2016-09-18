@@ -14,11 +14,11 @@ WriteMakefile(
     ),
     PL_FILES       => {},
     BUILD_REQUIRES => {
-        'Test::More'       => 0,
+        'Test::More' => 0,
     },
     PREREQ_PM => {
-        'HTML::Strip'     => 0,
-        'Class::Accessor' => 0,
+        'HTML::Strip' => 0,
+        'Moose'       => 0,
     },
     TEST_REQUIRES => {
         'Test::Class' => 0,
@@ -32,7 +32,7 @@ WriteMakefile(
         resources => {
             repository => {
                 type => 'git',
-                url  => 'git://github.com/nigelhorne/HTML-SocialMedia-Hashtag.git',
+                url  => 'git://github.com/GermanS/HTML-SocialMedia-Hashtag.git',
                 web  => 'https://github.com/GermanS/HTML-SocialMedia-Hashtag',
             },
         },
