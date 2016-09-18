@@ -25,7 +25,7 @@ WriteMakefile(
         'Test::Class' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES => 'HTML-SocialMedia-Hashtag-`*' },
+    clean => { FILES => 'HTML-SocialMedia-Hashtag-*' },
     META_MERGE      => {
         'meta-spec' => {
             version => 2
