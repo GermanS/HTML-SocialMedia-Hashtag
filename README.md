@@ -1,5 +1,4 @@
 # HTML-SocialMedia-Hashtag
-Get #hashtags and @usernames from html
 
 ## DESCRIPTION
 Get #hashtags and @usernames from html
