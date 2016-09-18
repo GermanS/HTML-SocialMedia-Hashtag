@@ -34,7 +34,7 @@ has 'text' => ( is => 'rw', isa => 'Str', required => 1 );
 
 =head3 hashtags()
 
-Get lowercaded and unique hashtags from html
+Get lowercased and unique hashtags from html
 
 =cut
 
@@ -48,7 +48,7 @@ sub hashtags {
 
 =head3 all_hashtags()
 
-Get all hashtags from html
+Get all hashtags
 
 =cut
 
@@ -75,6 +75,45 @@ sub all_hashtags {
     }
 
     return @all_hashtags;
+}
+
+=head3 nicknames()
+
+Get unique nicknames from html
+
+=cut
+
+sub nicknames {
+    my ( $self ) = @_;
+
+    return _uniq_array( $self -> all_nicknames() );
+}
+
+=head3 nicknames()
+
+Get all nicknames
+
+=cut
+
+sub all_nicknames {
+    my ( $self ) = @_;
+
+    my @nicknames;
+
+    my $text = $self -> text();
+
+    while ( $text =~ /\@(\S+)/gxo ) {
+            my $nickname = $1;
+
+            $nickname =~ s/(,)*$//g;
+            $nickname =~ s/(!)*!$//g;
+            $nickname =~ s/(\.)*$//g;
+            $nickname =~ s/(\?)*$//g;
+
+            push @nicknames, $nickname;
+    }
+
+    return @nicknames;
 }
 
 sub _uniq_array {
