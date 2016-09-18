@@ -7,11 +7,11 @@ use warnings;
 
 HTML::SocialMedia::Hashtag
 
-=head2 DESCRIPTION
+=head1 DESCRIPTION
 
 Get #hashtags and @usernames from html
 
-=head2 SYNOPSIS
+=head1 SYNOPSIS
 
     use HTML::SocialMedia::Hashtag;
     my $scanner = HTML::SocialMedia::Hashtag -> new( text => 'text with #hashtag and @username' );
@@ -30,9 +30,9 @@ use namespace::autoclean;
 
 has 'text' => ( is => 'rw', isa => 'Str', required => 1 );
 
-=head2 METHODS
+=head1 METHODS
 
-=head3 hashtags()
+=head2 hashtags()
 
 Get lowercased and unique hashtags from html
 
@@ -46,7 +46,7 @@ sub hashtags {
     return _uniq_array( @hashtags );
 }
 
-=head3 all_hashtags()
+=head2 all_hashtags()
 
 Get all hashtags
 
@@ -77,7 +77,7 @@ sub all_hashtags {
     return @all_hashtags;
 }
 
-=head3 nicknames()
+=head2 nicknames()
 
 Get unique nicknames from html
 
@@ -89,7 +89,7 @@ sub nicknames {
     return _uniq_array( $self -> all_nicknames() );
 }
 
-=head3 nicknames()
+=head2 nicknames()
 
 Get all nicknames
 
@@ -152,7 +152,7 @@ __PACKAGE__ -> meta() -> make_immutable();
 
 __END__
 
-=head2 AUTHOR
+=head1 AUTHOR
 
 German Semenkov
 german.semenkov@gmail.com
