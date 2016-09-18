@@ -21,5 +21,5 @@ Get all hashtags
 ### nicknames()
 Get unique nicknames from html
 
-### nicknames()
+### all_nicknames()
 Get all nicknames
