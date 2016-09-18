@@ -89,7 +89,7 @@ sub nicknames {
     return _uniq_array( $self -> all_nicknames() );
 }
 
-=head2 nicknames()
+=head2 all_nicknames()
 
 Get all nicknames
 
