@@ -22,6 +22,7 @@ Get #hashtags and @usernames from html
 
 our $VERSION = '0.1';
 
+use Encode qw(decode encode is_utf8);
 use HTML::Strip;
 
 use Moose;
@@ -40,7 +41,7 @@ Get lowercaded and unique hashtags from html
 sub hashtags {
     my ( $self ) = @_;
 
-    my @hashtags = map { lc( $_ ) } $self -> all_hashtags();
+    my @hashtags = map { _encode_utf( lc( _decode_utf( $_ ) ) ) } $self -> all_hashtags();
 
     return _uniq_array( @hashtags );
 }
@@ -79,10 +80,34 @@ sub all_hashtags {
 sub _uniq_array {
     my ( @array ) = @_;
 
-    #TODO: implement mee
+    my %seen = ();
 
-    return @array;
+    return grep { ! $seen{ $_ } ++ } @array;
 }
+
+sub _encode_utf {
+    my ( $string ) = @_;
+
+    my $result = is_utf8( $string )
+               ? encode( 'UTF-8', $string )
+               : $string;
+
+    if( is_utf8( $result ) ) {
+        utf8::downgrade( $result );
+    }
+
+    return $result;
+}
+
+sub _decode_utf {
+    my ( $string ) = @_;
+
+    return is_utf8( $string )
+         ? $string
+         : decode( 'UTF-8', $string );
+}
+
+__PACKAGE__ -> meta() -> make_immutable();
 
 1;
 
