@@ -20,6 +20,7 @@ WriteMakefile(
         'Encode'      => 0,
         'HTML::Strip' => 0,
         'Moose'       => 0,
+        'namespace::autoclean' => 0,
     },
     TEST_REQUIRES => {
         'Test::Class' => 0,
